@@ -18,7 +18,7 @@ function floatUFO() {
             ufo.classList.remove('clicked');
             isClicked = false;
             floatUFO();
-        }, Math.random() * (10000) + 25000);
+        }, Math.random() * (10000) + 5000);
     }
 }
 
