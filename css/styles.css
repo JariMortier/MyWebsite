@@ -4,8 +4,8 @@
   
   /* Style the body */
   body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-image: url(/pictures/marbleBG.png);
+    font-family: 'Roboto Flex', sans-serif, Arial, Helvetica, sans-serif;
+    background-image: url('/pictures/marbleBG.png');
     background-position: center;
     margin: 0;
   }
@@ -219,3 +219,4 @@
   
   /* fonts */
   @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap');
