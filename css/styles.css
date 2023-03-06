@@ -24,7 +24,7 @@
   /* Style the top navigation bar */
   .navbar {
     overflow: hidden;
-    background-color: #333;
+    background-color: #625D5D;
     position: fixed; /* Set the navbar to fixed position */
     width: 100%;
   }
@@ -56,7 +56,6 @@
     background-color: rgb(92, 138, 245);
     color: black;
   }
-  
 
   /* Column container */
   .row {  
@@ -80,13 +79,6 @@
     -ms-flex: 70%; /* IE10 */
     flex: 70%;
     background-color: white;
-    padding: 20px;
-  }
-  
-  /* Fake image, just for this example */
-  .fakeimg {
-    background-color: #aaa;
-    width: 100%;
     padding: 20px;
   }
   
