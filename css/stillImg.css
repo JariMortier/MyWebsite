@@ -129,6 +129,11 @@
     color: black;
   }
 
+  .resize{
+    width: 100%;
+    height: auto;
+  }
+
   @keyframes navLinks {
     from{
       background-color: #625d5de0;
