@@ -5,7 +5,7 @@
   /* Style the body */
   body {
     font-family: 'Roboto Flex', sans-serif, Arial, Helvetica, sans-serif;
-    background-image: url('/pictures/marbleBG.png');
+    background-image: url('../pictures/marbleBG.png');
     background-position: center;
     margin: 0;
   }
@@ -193,6 +193,13 @@
     color: white;
     backdrop-filter: blur(5px);
     z-index: 0;
+  }
+
+  .gameItem{
+    background-color: white;
+    color: #383535;
+    border-color: #383535;
+    border-width: 10px;
   }
 
   @keyframes navLinks {
