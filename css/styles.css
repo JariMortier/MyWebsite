@@ -195,11 +195,37 @@
     z-index: 0;
   }
 
-  .gameItem{
+  .gameName{
+    width: 80%;
     background-color: white;
     color: #383535;
     border-color: #383535;
-    border-width: 10px;
+  }
+  .gameTable{
+    border-color: #383535;
+  }
+
+  .gameTable table{
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .gameTable th{
+    border-collapse: collapse;
+    border: 3px solid;
+    font-size: 24px;
+    height: 50px;
+  }
+
+  .gameTable td{
+    border-collapse: collapse;
+    border: 3px solid;
+    
+  }
+
+  .gameTable img{
+    width: 100px;
+    height: auto;
   }
 
   @keyframes navLinks {
