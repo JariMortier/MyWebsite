@@ -1,5 +1,5 @@
 function setup() {
-  createCanvas(1440, 720);
+  createCanvas(1000, 1000);
 }
 
 function egg(x, y) {
@@ -142,12 +142,12 @@ function draw() {
     if (x <= 92 || x >= width - 92) {
       dx *= -1;
     }
-    if (y <= 100 || y >= height - 100) {
+    if (y <= 100 || y >= height - 110) {
       dy *= -1;
     }
 
     x = constrain(x, 92, width - 92);
-    y = constrain(y, 100, height - 100);
+    y = constrain(y, 100, height - 110);
     
     openEgg(x, y);
   } else {
