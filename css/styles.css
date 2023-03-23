@@ -240,6 +240,14 @@
     height: auto;
   }
 
+  .zgeg{
+    display: block;
+    position: fixed;
+    width: 1000px;
+    height: 1000px;
+    z-index: 2;
+  }
+
   @keyframes navLinks {
     from{
       background-color: #625d5de0;
