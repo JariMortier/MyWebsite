@@ -23,6 +23,10 @@ let friends = 0;
 let enemies = 0;
 let hp = 100;
 let t0;
+let geiger;
+let slurp;
+let biem;
+let succes;
 
 function game(){
   nano.physics();
@@ -37,7 +41,7 @@ function game(){
           nano.damage(true);
         }
         bodies[i].kill();
-//play slurp.mp3
+        slurp.play();
       }
     }
     if(bodies[i].alive){      
@@ -153,6 +157,11 @@ function death(){ //death animation
   
   if (millis() - t0 >= 10000){
     gameState = 4;
+    if(lvl >= 10){
+      succes.play();
+    } else {
+      biem.play();
+    }
   }
    
   fill(145);
@@ -333,7 +342,10 @@ function setup() {
   createCanvas(1500, 1500);
   colorMode(RGB);
   t0 = millis();
-  //let universe = loadImage('images/universe.jpeg');
+  geiger = loadSound("sounds/geiger.mp3");
+  slurp = loadSound("sounds/slurp.mp3");
+  biem = loadSound("sounds/bakeretsu.mp3");
+  succes = loadSound("sounds/succes.mp3");
 }
 
 function draw() {
@@ -341,8 +353,11 @@ function draw() {
   background(backgroundColor);
   
   if(hp <= 0){
+    geiger.play();
     gameState = 3;
     hp = 100;
+    slowDown = 100;
+    slowDownCheck = false;
   }
   
   switch(gameState){
