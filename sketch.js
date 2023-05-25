@@ -362,7 +362,7 @@ function gameOver(){
   
   textSize(32);
   textAlign(LEFT, BOTTOM);
-  text("Special thanks to Marcovdt68 for betatesting this game.", 30, height - 30);
+  text("Special thanks to Marcovdt68 and crazyturtle8 for betatesting this game.", 30, height - 30);
 }
 
 function preload() {
