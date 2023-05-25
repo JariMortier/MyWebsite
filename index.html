@@ -1,106 +1,169 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <title>MyPortfolio</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="pictures/LogoPen.png">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/addons/p5.sound.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>CV - Mortary productions</title>
+    <meta name="description" content="My portfolio for the EmTech course.">
+    <link rel="icon" type="image/png" sizes="256x256" href="assets/img/LogoPen.png">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700&amp;display=swap">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/pikaday.min.css">
 </head>
 
 <body>
-    <div class="navbar">
-        <a href="Projects.html">Projects</a>
-        <a href="Hobbies.html">Hobbies</a>
-        <a href="Education.html">Education</a>
-        <a href="#jobs">My jobs</a>
-    </div>
-
-    <div class="header">
-        <h1>My Portfolio</h1>
-        <p>Curricullum vitae of Jari Mortier</p>
-    </div>
-
-    <div class="row">
-        <div class="side">
-            <h2>About Me</h2>
-            <a target="_blank" href="pictures/picBubbleBath.png">
-                <img padding="20px" padding="" width="100%" src="pictures/picBubbleBath.png" alt="Picture of a bubble pool">
-            </a>
-            <u>This picture was taken in Budapest, <a href="https://szelfimuzeum.hu/">Szelfimúzeum</a>.</u>
-            <h3>Curriculum vitae:</h3>
-            <p>
-                Full name: Jari Marcel J. Mortier <br>
-                Nationality: Belgium <br>
-                Place of birth: Ostend <br>
-                Sex: M <br>
-                Driving licence: category B <br>
-            </p>
-
-            <h3>Some other qualifications:</h3>
-            <p>Languages:</p>
-            <ul>
-                <li>Dutch: native proficiency</li>
-                <li>English: bilingual proficiency</li>
-                <li>French: elementary proficiency</li>
-            </ul>
-            <h3>Work experience:</h3>
-            <ul>
-                <li>04/2019 - 2020: <a href="https://www.vossenberg.be/">Domein Vossenberg</a></li>
-                <li>09/2019 - present: <a href="https://www.elastikaroeselare.be/">Elastika Roeselare VZW</a></li>
-                <li>Summer 2022: <a href="https://www.remiclaeys.com/">Remi Claeys Aluminium NV</a></li>
-            </ul>
-            <p>
-
-            </p>
-
-        </div>
-        <div class="main">
-            <h2 id="jobs">My jobs.</h2>
-            <h2>Gymnastics trainer at Elastika VZW Roeselare</h2>
-            <img src="pictures/VT_OPL_DIPL_Jari_Mortier-1.png" alt="warm up">
-            <p>I train gymnasts for trampoline from ages 10+.</p>
-            <p>
-                I am currently overseeing 2 groups of 16 gymnasts and 1 of 10 gymnasts.<br>
-                These are 2 recreational groups and 1 more advanced group (D-level). I want to enter official tournaments
-                as soon as they are ready. <br>
-                I have an official GymFed diploma for Gymnastics. After taking a theoretical and physical exam
-                on top of an internship, they granted me my diploma.
-            </p>
-
-            <br>
-            <h2>Tutoring</h2>
-            <p>I tutor children about maths and physics.</p>
-            <p>I tutor kids who aren't up-to-date on their own lessons or don't understand them very well.
-                Through my practical approach of using practice problems, I can explain most subjects about maths and
-                generally physics to almost any child <br>
-                I can come to your house, or we can arrange an online consultation.
-            </p><br><br>
-            <h2>Portfolio</h2>
-            <p>
-                For a more complete portfolio, go to the <a href="Projects.html">project page</a>. <br><br>
-            </p>
-            <p>My latest, I designed my own logo.</p>
-            <img src="pictures/logoPenSword.svg" alt="LogoPen"><br>
-            <div class="zgeg">
-                <script src="sketch.js"></script>
-                <script src="body.js"></script>
-                <script src="robot.js"></script>
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
+        <div class="container"><a class="navbar-brand logo" href="#">Mortary productions</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarNav"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="project-page.html">Nucleagg</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects-grid-cards.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="more.html">About me</a></li>
+                </ul>
             </div>
         </div>
-    </div>
-
-    <div class="footer">
-        <h2>Contact information</h2>
-        <p>
-            E-mail: <a href="jari.mortier@Ugent.be">jari.mortier@Ugent.be</a><br>
-            Tel: +324##/##.##.##
-        </p>
-    </div>
-
+    </nav>
+    <main class="page cv-page">
+        <section class="portfolio-block block-intro border-bottom">
+            <div class="container">
+                <div class="avatar" style="background-image: url(&quot;assets/img/avatars/avatar.jpg&quot;);"></div>
+                <div class="about-me">
+                    <p><br>Hello! I am&nbsp;<strong>Jari Mortier</strong>, student at Ghent University. I am currently in my second year of industrial design and will continue on this educational path until I'm satisfied.<br><br></p>
+                </div>
+            </div>
+        </section>
+        <section class="portfolio-block cv">
+            <div class="container">
+                <div class="work-experience group">
+                    <div class="heading">
+                        <h2 class="text-center">Work Experience</h2>
+                    </div>
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Waiter</h3>
+                                <h4 class="organization">Domein Vossenberg</h4>
+                            </div>
+                            <div class="col-md-6"><span class="period">04/2019 - 01/2020</span></div>
+                        </div>
+                        <p class="text-muted">This first job made me realise I never want to work in the catering industry or retail ever again.</p>
+                    </div>
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-6">
+                                <h3>Head coach trampoline</h3>
+                                <h4 class="organization">Elastika Roeselare VZW</h4>
+                            </div>
+                            <div class="col-md-6"><span class="period">09/2019 -&nbsp; Present</span></div>
+                        </div>
+                        <p class="text-muted">This started as a small job on the side, but has grown into something I love. Being able to teach kids my own hobby is amazing and even furthers my communication and educational skills as an added bonus.</p>
+                    </div>
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Data entry/ database UI developer</h3>
+                                <h4 class="organization">Remi Claeys Aluminium NV</h4>
+                            </div>
+                            <div class="col-md-6"><span class="period">Summer 2022</span></div>
+                        </div>
+                        <p class="text-muted">What started out as a standard student job, data entry. Turned into something special when tasked with writing an interface macro for their datasheets. I got the "promotion" after asking my chef for something more challenging and he obliged!</p>
+                    </div>
+                </div>
+                <div class="education group">
+                    <div class="heading">
+                        <h2 class="text-center">Education</h2>
+                    </div>
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Industrial sciences (applied STEM)</h3>
+                                <h4 class="organization">VTI Roeselare</h4>
+                            </div>
+                            <div class="col-6"><span class="period">09/2015- 05/2021</span></div>
+                        </div>
+                        <p class="text-muted">My interest in science only grew here (even though there were certain professors wo where rather keen on making sure that wasn't the case.)<br>Most of my mathematic skills were learned here.</p>
+                    </div>
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Industrial Design</h3>
+                                <h4 class="organization">Ghent University</h4>
+                            </div>
+                            <div class="col-md-6"><span class="period">09/2021- present</span></div>
+                        </div>
+                        <p class="text-muted">Even while taking this course I can already comment on the overload of projects we have to make. It teaches how you better plan ahead.</p>
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="skills portfolio-info-card">
+                                <h2>Skills</h2>
+                                <h3>Applied mathematics</h3>
+                                <div class="progress">
+                                    <div class="progress-bar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"><span class="visually-hidden">100%</span></div>
+                                </div>
+                                <h3>Programming</h3>
+                                <div class="progress">
+                                    <div class="progress-bar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"><span class="visually-hidden">90%</span></div>
+                                </div>
+                                <h3>Vectorgraphics design</h3>
+                                <div class="progress">
+                                    <div class="progress-bar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"><span class="visually-hidden">80%</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="contact-info portfolio-info-card">
+                                <h2>Contact Info</h2>
+                                <div class="row">
+                                    <div class="col-1"><i class="icon ion-android-calendar icon"></i></div>
+                                    <div class="col-9"><span>24/02/2004</span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-1"><i class="icon ion-person icon"></i></div>
+                                    <div class="col-9"><span>Jari Mortier</span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-1"><i class="icon ion-ios-telephone icon"></i></div>
+                                    <div class="col-9"><span>+324##/##.##.##</span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-1"><i class="icon ion-at icon"></i></div>
+                                    <div class="col-9"><span>Jari.Mortier@ugent.be</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hobbies group">
+                    <div class="heading">
+                        <h2 class="text-center">Hobbies</h2>
+                    </div>
+                    <p class="text-center text-muted">
+                        I have always liked gymnastics and for most of that time I have trained the trampoline.<br>
+                        Recently I have discovered the fun of apparatus gymnastics. I have since been training on men's rings, high bar, parallel bars and floor.<br><br>
+                        Another hobby of mine is gaming, most of my favorite games are platformers like the Mario games. There are some exceptions like
+                        <a href="https://www.nintendo.be/nl/Games/Nintendo-Switch-games/The-Legend-of-Zelda-Breath-of-the-Wild-1173609.html">BOTW</a>, 
+                        <a href="https://www.nintendo.be/nl/Games/Nintendo-Switch-games/The-Legend-of-Zelda-Tears-of-the-Kingdom-1576884.html">TOTK</a>
+                         and <a href="https://store.steampowered.com/app/753640/Outer_Wilds/">The Outer Wilds</a>.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="page-footer">
+        <div class="container">
+            <div class="links"><a href="#">About me</a><a href="#">Contact me</a><a href="#">Projects</a></div>
+            <div class="social-icons"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-instagram-outline"></i></a></div>
+        </div>
+    </footer>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/pikaday.min.js"></script>
+    <script src="assets/js/theme.js"></script>
 </body>
 
 </html>
