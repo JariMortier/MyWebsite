@@ -17,8 +17,8 @@ let slowDown = 100;
 let slowDownCheck = false;
 let nano;
 let score = 0;
-let gameState = 4;
-let lvl = 10;
+let gameState = 0;
+let lvl = 0;
 let friends = 0;
 let enemies = 0;
 let hp = 100;
@@ -156,8 +156,12 @@ function game(){
 
 function death(){ //death animation
   
-  if (millis() - t0 >= 10000){
+  if (millis() - t0 >= 1000){ ///////////////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! back to 10000 when done debugging]]]]\\\\\\\<>>>>>>>>>>>>
     gameState = 4;
+
+    speed1 = floor(random(energyMort.getRowCount() - 1)); //unused placeholder in this segment => memorysaving
+    speed2 = floor(random(causes.getRowCount()));
+
     if(lvl >= 10){
       succes.play();
     } else {
@@ -314,7 +318,27 @@ function gameOver(){
     image(Fplant, 0, 0);
     text("You didn't save the world!", width/2, 200);
   }
-  
+
+  fill(212, 212, 212, 120);
+  strokeWeight(5);
+  stroke(0);
+  rect(30, 250, width/2 - 250, height - 450);
+  textSize(64);
+  textAlign(CENTER, TOP);
+  fill(255);
+  text("Did you know?", width/4 - 95, 280);
+  textAlign(LEFT, TOP);
+  textSize(32);
+  text("This game is very misleading, nuclear power plants aren't this dangerous in real life!", 60, 360, width/2 - 310, 80);
+
+
+  speedB1 = causes.getString(speed2, 1);
+  text("For example, " + causes.getString(speed2, 0) + " is way more dangerous. With a mortality rate of " + round(speedB1 * 100, 4) + "%. Or " + round(speedB1 * 136798906) + "x more dangerous than dying from a nuclear powerplant!", 60, 450, width/2 - 310, 200);
+
+  speedB2 = energyMort.getString(speed1, 1);
+  friends = energyMort.getString(speed1, 2);
+  text("Furthermore, nuclear is one of the safest ways to extract energy. " + energyMort.getString(speed1, 0) + " is " + round(speedB2 / 0.03, 1) + "x worse with " + friends + " deaths per 1000 teraWatts generated.", 60, 660, width/2 - 310, 300);
+
   fill(255, 0, 0);
   if (abs(mouseX - width / 2) <= 200 && abs(mouseY - height + 150) <= 50){
     fill(120, 0, 0); //hover effect
@@ -342,8 +366,10 @@ function gameOver(){
 }
 
 function preload() {
-  plant = loadImage("pictures/powerplant.png")
-  Fplant = loadImage("pictures/powerplan't.png")
+  plant = loadImage("pictures/powerplant.png");
+  Fplant = loadImage("pictures/powerplan't.png");
+  causes = loadTable("data/causes.csv", "ssv",  "header");
+  energyMort = loadTable("data/energyMort.csv", "ssv", "header");
 }
 
 function setup() {
