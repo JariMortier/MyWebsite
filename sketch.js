@@ -17,8 +17,8 @@ let slowDown = 100;
 let slowDownCheck = false;
 let nano;
 let score = 0;
-let gameState = 0;
-let lvl = 0;
+let gameState = 4;
+let lvl = 10;
 let friends = 0;
 let enemies = 0;
 let hp = 100;
@@ -38,6 +38,7 @@ function game(){
           score++;
         } else {
           hp -= bodies[i].m;
+          score--;
           nano.damage(true);
         }
         bodies[i].kill();
@@ -169,7 +170,7 @@ function death(){ //death animation
   stroke(0);
   ellipseMode(CENTER);
   angleMode(RADIANS);
-  arc(width/2, 1000, 400, 400, 0, PI);
+  arc(width/2, 600, 400, 400, 0, PI);
   
   if(millis() - t0 > 4500){
     fill(lerpColor(color(175), color(35, 219, 248), map(millis() - t0, 500, 4500, 0, 1)));
@@ -177,27 +178,28 @@ function death(){ //death animation
     fill(175);
   }
 
-  ellipse(width/2, 1000, 400, 90)
+  ellipse(width/2, 600, 400, 90)
   
   fill(212);
   strokeWeight(0);
-  ellipse(width/2, 997, 150, 27)
-  arc(width/2, 997, 150, 150, PI, 0); //bottom half done
+  ellipse(width/2, 597, 150, 27)
+  arc(width/2, 597, 150, 150, PI, 0); //bottom half done
   
   fill(145);
   strokeWeight(1);
   if (millis() - t0 < 5000){
-    ellipse(width/2, map(millis() - t0, 0, 5000, 400, 993), 300, 68);
-    arc(width/2, map(millis() - t0, 0, 5000, 400, 993), 300, 300, PI, 0);
+    ellipse(width/2, map(millis() - t0, 0, 5000, 200, 593), 300, 68);
+    arc(width/2, map(millis() - t0, 0, 5000, 200, 593), 300, 300, PI, 0);
   } else {
-    ellipse(width/2, 993, 300, 68);
-    arc(width/2, 993, 300, 300, PI, 0); //top half
+    ellipse(width/2, 593, 300, 68);
+    arc(width/2, 593, 300, 300, PI, 0); //top half
   }
   
   if (millis() - t0 >= 4500){
     strokeWeight(0);
     fill(35, 219, 248, 45 + 10 * cos(millis() / 50));
-    ellipse(750, 1000, 2 * (millis() - t0 - 4500), 0.46 * (millis() - t0 - 4500))
+    ellipse(width / 2, 600, 2 * (millis() - t0 - 4500), 0.46 * (millis() - t0 - 4500));
+    ellipse(width / 2, 600, 2 * (millis() - t0 - 4500), 2 * (millis() - t0 - 4500));
     
     fill(255, 0, 0);
     textAlign(CENTER, CENTER);
@@ -209,9 +211,9 @@ function death(){ //death animation
     }
     
     if(lvl >= 10){
-      text("YOU DID IT!", width/2, 450);
+      text("YOU DID IT!", width/2, 300);
     } else {
-      text("YOU DIED", width/2, 450); 
+      text("YOU DIED", width/2, 300); 
     }
   }
 }
@@ -237,7 +239,7 @@ function preScreen(){
   textSize(43);
   textAlign(CENTER, TOP);
   fill(0);
-  text("You are a nanorobot eating exotic matter in a reactor, without you the plant will detonate! You can nudge the bot and the matter with your mouse, but be warned. For your actions have consequences. Try clicking the mouse to see if that does something.", width/2 - 400, 500, 800);
+  text("You are a nanorobot eating exotic matter in a reactor, without you the plant will detonate! You can nudge the bot and the matter with your mouse, but be warned. For your actions have consequences. Try clicking the mouse to see if that does something.", width/2 - 400, 350, 800);
   
   
   textSize(64);
@@ -300,18 +302,18 @@ function gameSetup(friends, enemies){
 
 function gameOver(){
   strokeWeight(1);
-  background(235, 235, 235);
   textSize(110);
   textAlign(CENTER);
   fill(0);
   if(lvl >= 10){
+    image(plant, 0, 0);
     fill(255, 215, 0);
     text("You saved the world!", width/2, 200);
+
   } else {
+    image(Fplant, 0, 0);
     text("You didn't save the world!", width/2, 200);
   }
-  
-  
   
   fill(255, 0, 0);
   if (abs(mouseX - width / 2) <= 200 && abs(mouseY - height + 150) <= 50){
@@ -325,21 +327,27 @@ function gameOver(){
   strokeWeight(5);
   rect(width/2 - 200, height - 200, 400, 100);
   
-  strokeWeight(1);
-  fill(0);
+  strokeWeight(3);
+  stroke(0);
+  fill(255);
   textAlign(CENTER, CENTER);
   textSize(64)
   text("SCORE: " + score, width/2, 600);
   text("Level: " + lvl, width/2, 680);
   text("TRY AGAIN", width/2, height - 150);
   
-  textSize(40);
-  textAlign(LEFT, TOP);
-  text("Special thanks to Marcovdt68 for playtesting this game.", 30, 900, 500);
+  textSize(32);
+  textAlign(LEFT, BOTTOM);
+  text("Special thanks to Marcovdt68 for betatesting this game.", 30, height - 30);
+}
+
+function preload() {
+  plant = loadImage("pictures/powerplant.png")
+  Fplant = loadImage("pictures/powerplan't.png")
 }
 
 function setup() {
-  createCanvas(1500, 1500);
+  createCanvas(1920, 1080);
   colorMode(RGB);
   t0 = millis();
   geiger = loadSound("sounds/geiger.mp3");
