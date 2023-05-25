@@ -156,7 +156,7 @@ function game(){
 
 function death(){ //death animation
   
-  if (millis() - t0 >= 1000){ ///////////////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! back to 10000 when done debugging]]]]\\\\\\\<>>>>>>>>>>>>
+  if (millis() - t0 >= 10000){
     gameState = 4;
 
     speed1 = floor(random(energyMort.getRowCount() - 1)); //unused placeholder in this segment => memorysaving
